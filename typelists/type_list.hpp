@@ -452,6 +452,62 @@ namespace cola
 
 		template <typename List>
 		using Reverse_t = typename Reverse<List>::type;
+
+		/**
+		* Most_derived
+		接受一个typelist和一个base类型，传加typelist中base的最深层派生类型(没有则返回base)
+		*/
+		template <typename List, typename T>
+		class Most_derived;
+
+		template <typename T>
+		class Most_derived<Type_list<>, T>
+		{
+		public:
+			using type = T;
+		};
+
+		template <typename Head, typename... Tail, typename T>
+		class Most_derived<Type_list<Head, Tail...>, T>
+		{
+			using Candidate = typename Most_derived<Type_list<Tail...>, T>::type;
+
+		public:
+			using type = std::conditional_t<
+				std::is_base_of_v<Candidate, Head>,
+				Head,
+				Candidate
+			>;
+		};
+
+		template <typename List, typename T>
+		using Most_derived_t = typename Most_derived<List, T>::type;
+
+		/**
+		* Derived_to_front
+		*/
+		template <typename List>
+		class Derived_to_front;
+
+		template <>
+		class Derived_to_front<Type_list<>>
+		{
+		public:
+			using type = Type_list<>;
+		};
+
+		template <typename Head, typename... Tail>
+		class Derived_to_front<Type_list<Head, Tail...>>
+		{
+			using MD = Most_derived_t<Type_list<Tail...>, Head>;
+			using L = Replace_t<Type_list<Tail...>, MD, Head>;
+
+		public:
+			using type = Push_front_t<L, MD>;
+		};
+
+		template <typename List>
+		using Derived_to_front_t = typename Derived_to_front<List>::type;
 	}
 }
 

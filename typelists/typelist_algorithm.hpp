@@ -80,6 +80,24 @@ namespace cola
 		public:
 			using type = Type_list<>;
 		};
+
+		template <
+			typename Head, typename... Tail,
+			template <typename> class Predicate>
+		class Filter<Type_list<Head, Tail...>, Predicate>
+		{
+		private:
+			using T1 = typename Filter<Type_list<Tail...>, Predicate>::type;
+
+		public:
+			using type = std::conditional_t<
+				Predicate<Head>::value,
+				Push_front_t<T1, Head>,
+				T1>;
+		};
+
+		template <typename List, template <typename> class Predicate>
+		using Filter_t = typename Filter<List, Predicate>::type;
 	}
 }
 

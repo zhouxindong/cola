@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="type_list.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="typelist_algorithm.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="typelist_utils.hpp">
+    <ClInclude Include="raw_array.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

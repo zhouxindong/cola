@@ -10,6 +10,14 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace typelistsunittest
 {
+	class Base {};
+
+	class Derived1 : public Base {};
+
+	class Derived2 : public Base {};
+
+	class Derived11 : public Derived1 {};
+
 	TEST_CLASS(typelistsunittest)
 	{
 	public:
@@ -270,6 +278,62 @@ namespace typelistsunittest
 			Assert::IsTrue(std::is_same_v<
 				cola::Type_list<unsigned long long, long long, unsigned, int, unsigned short, short, char>,
 				cola::TL::Reverse_t<integer_typelist>>);
+		}
+
+		TEST_METHOD(most_derived_test)
+		{
+			Assert::IsTrue(std::is_same_v<
+				Base,
+				cola::TL::Most_derived_t<empty_typelist, Base>
+			>);
+
+			Assert::IsTrue(std::is_same_v<
+				Base,
+				cola::TL::Most_derived_t<integer_typelist, Base>
+			>);
+
+			Assert::IsTrue(std::is_same_v<
+				Base,
+				cola::TL::Most_derived_t<cola::Type_list<double, std::string, Base, int>, Base>
+			>);
+
+			Assert::IsTrue(std::is_same_v<
+				Derived2,
+				cola::TL::Most_derived_t<cola::Type_list<int, Base, Derived1, Derived2>, Base> 
+			>);
+
+			Assert::IsTrue(std::is_same_v<
+				Derived11,
+				cola::TL::Most_derived_t<cola::Type_list<Derived11, Derived1, int>, Base>
+			>);
+		}
+
+		TEST_METHOD(derived_to_front_test)
+		{
+			Assert::IsTrue(std::is_same_v<
+				empty_typelist,
+				cola::TL::Derived_to_front_t<empty_typelist>
+			>);
+
+			Assert::IsTrue(std::is_same_v<
+				string_typelist,
+				cola::TL::Derived_to_front_t<string_typelist>
+			>);
+
+			Assert::IsTrue(std::is_same_v<
+				float_typelist,
+				cola::TL::Derived_to_front_t<float_typelist>
+			>);
+
+			Assert::IsTrue(std::is_same_v<
+				integer_typelist,
+				cola::TL::Derived_to_front_t<integer_typelist>
+			>);
+
+			Assert::IsTrue(std::is_same_v<
+				cola::Type_list<Derived11, int, Base, Derived1>,
+				cola::TL::Derived_to_front_t<cola::Type_list<Base, int, Derived11, Derived1>>
+			>);
 		}
 	};
 }
