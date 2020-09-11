@@ -19,15 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="container.hpp" />
-    <ClInclude Include="guid.hpp" />
-    <ClInclude Include="raw_array.hpp" />
+    <ClInclude Include="easy_bind.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{24f75163-aebe-4866-85e2-7d70fb872c70}</ProjectGuid>
-    <RootNamespace>utils</RootNamespace>
+    <ProjectGuid>{b567d8ba-554e-46fc-b5ed-210e258e823a}</ProjectGuid>
+    <RootNamespace>mpl</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

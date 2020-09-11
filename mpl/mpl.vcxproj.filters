@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="raw_array.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="container.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="guid.hpp">
+    <ClInclude Include="easy_bind.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

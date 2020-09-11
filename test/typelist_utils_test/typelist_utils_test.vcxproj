@@ -24,6 +24,7 @@
     <ProjectGuid>{99c6702c-58b7-49b9-8be8-b61343fa7c24}</ProjectGuid>
     <RootNamespace>typelistutilstest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>typelists_test</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
