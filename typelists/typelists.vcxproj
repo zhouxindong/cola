@@ -143,6 +143,7 @@
     <ClInclude Include="typelist_algorithm.hpp" />
     <ClInclude Include="typelist_utils.hpp" />
     <ClInclude Include="type_list.hpp" />
+    <ClInclude Include="value_list.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

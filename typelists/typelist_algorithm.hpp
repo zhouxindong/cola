@@ -98,6 +98,31 @@ namespace cola
 
 		template <typename List, template <typename> class Predicate>
 		using Filter_t = typename Filter<List, Predicate>::type;
+
+		/**
+		* Insertion_sort
+		*/
+		//template <
+		//	typename List,
+		//	template <typename, typename> class Compare>
+		//class Insertion_sort;
+
+		//template <
+		//	typename Head, 
+		//	typename ...Tail, 
+		//	template <typename T, typename U> class Compare>
+		//class Insertion_sort<Type_list<Head, Tail...>, Compare>
+		//{
+		//public:
+		//	using type = Push_front_t<typename Insertion_sort<Type_list<Tail...>, Compare>::type, Head>;
+		//};
+		//		 
+		//template <template<typename, typename> class Compare>
+		//class Insertion_sort<Type_list<>, Compare>
+		//{
+		//public:
+		//	using type = Type_list<>;
+		//};
 	}
 }
 

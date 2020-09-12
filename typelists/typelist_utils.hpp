@@ -52,18 +52,18 @@ namespace cola
 		}
 
 		// 2. index
-		template <typename List, template <typename> class F, unsigned N>
-		class Field_impl;
+		//template <typename List, template <typename> class F, unsigned N>
+		//class Field_impl;
 
-		template <typename Head, typename... Tail, template <typename> class F, unsigned N>
-		class Field_impl<Type_list<Head, Tail...>, F, N>
-		{
-		public:
-			//static F<N_element_t<Type_list<Tail...>, N - 1>>& get(Apply<Type_list<Head, Tail...>, F>& obj)
-			//{
+		//template <typename Head, typename... Tail, template <typename> class F, unsigned N>
+		//class Field_impl<Type_list<Head, Tail...>, F, N>
+		//{
+		//public:
+		//	//static F<N_element_t<Type_list<Tail...>, N - 1>>& get(Apply<Type_list<Head, Tail...>, F>& obj)
+		//	//{
 
-			//}
-		};
+		//	//}
+		//};
 
 	}
 }
