@@ -12,7 +12,7 @@ struct Holder
     T value_;
 };
 
-int main()
+int main2()
 {
     cola::TL::Apply<cola::Type_list<int, double, std::string>, Holder> info;
 
@@ -27,6 +27,8 @@ int main()
     std::cout << ri << "\n";
     std::cout << rd << "\n";
     std::cout << rs << "\n";
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

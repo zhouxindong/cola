@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Tuple.hpp" />
     <ClInclude Include="typelist_algorithm.hpp" />
     <ClInclude Include="typelist_utils.hpp" />
     <ClInclude Include="type_list.hpp" />

@@ -163,6 +163,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="tuple_unittest.cpp" />
     <ClCompile Include="typelists_unittest.cpp" />
     <ClCompile Include="typelist_algorithm_unittest.cpp" />
   </ItemGroup>
